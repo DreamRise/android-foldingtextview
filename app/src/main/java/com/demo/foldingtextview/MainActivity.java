@@ -4,16 +4,29 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    private TextView foldingTextView;
+    private ImageView foldImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initView();
+        initData();
     }
-
+    private void initView(){
+        foldingTextView=(TextView)findViewById(R.id.foldingText);
+        foldImageView=(ImageView)findViewById(R.id.reverseImage);
+    }
+    private void initData(){
+        foldingTextView.setText(getResources().getString(R.string.foldingtext));
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
